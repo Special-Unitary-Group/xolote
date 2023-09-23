@@ -43,3 +43,14 @@ For more information please consult the offical repo https://github.com/Fridapla
 #### Pinecone.io
 
 Create a Pinecone.io account if necessary and create an Index and API Key, these will be used in the env variables further on.
+
+### Environmental variables
+
+The `.env` file needs to have the following environmental variables for the script to work properly:
+- `OPENAI_API_KEY`: API Key you use for OpenAI access
+- `OPENAI_API_BASE`: Base page for the API
+- `OPENAI_CHAT_MODEL_NAME`: GPT model instance being used
+- `OPENAI_EMBEDDINGS_MODEL_NAME`: Model name for OpenAI embeddings
+- `PINECONE_API_KEY`: Generated Pinecone API Key
+- `PINECONE_ENVIRONMENT`: Provided Environment for Pinecone, generated with Index
+- `PINECONE_INDEX_NAME`: Generated Index name for Pinecone
