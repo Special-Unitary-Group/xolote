@@ -28,3 +28,18 @@ To view the version of your libraries, run the following:
 pip show python-dotenv
 ```
 
+### FRIDA & Pinecone.io
+
+This project uses the FRIDA SDK by Softek and Pinecone.io as a Long-Term Memory method for AI. To obtain the necessary information, do the following:
+
+#### FRIDA
+
+Execute in your Python instance:
+``` CMD Commands
+pip install git+https://github.com/Fridaplatform/SofttekLLMSDK.git
+```
+For more information please consult the offical repo https://github.com/Fridaplatform/SofttekLLMSDK
+
+#### Pinecone.io
+
+Create a Pinecone.io account if necessary and create an Index and API Key, these will be used in the env variables further on.
