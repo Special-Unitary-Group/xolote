@@ -9,3 +9,22 @@ This repository is part of the competition HackMty, where the goal is to create 
 This project is done to resolve the issue of searching for an scientific paper, articule or report into a big pile with large amounts of documents. Where we only want to obtain information in a certain report that we are looking for.
 To save up time and energy, this projects has as input one or several article files and a prompt for what is being looked for. Giving as an output the required file and section where the request is obtained from.
 
+## Previous configurations
+
+### Installing the libraries
+
+The script works with the following versions:
+- python `3.11.5`
+- tensorflow `2.13.0`
+- python-dotenv `1.0.0`
+
+To install the necessary libraries, run the following code in a Python executer
+``` CMD Commands
+pip install python-dotenv
+```
+
+To view the version of your libraries, run the following:
+``` CMD Commands
+pip show python-dotenv
+```
+
