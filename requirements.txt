@@ -9,3 +9,4 @@ faiss-cpu
 black
 uvicorn
 fastapi
+python-multipart
