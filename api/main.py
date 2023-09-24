@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
@@ -10,6 +12,15 @@ from pydantic import BaseModel
 openai_api_key="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"
 app = FastAPI()
 
+origins = ['https://organic-zebra-w55pw969j7pf957q-3000.app.github.dev/']
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 #Importing the data vectos
 embeddings = OpenAIEmbeddings()
 vectors = FAISS.load_local("vector_index", embeddings)
