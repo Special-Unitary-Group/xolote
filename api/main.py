@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Form
 from fastapi.middleware.cors import CORSMiddleware
 
 from langchain.vectorstores import FAISS
@@ -60,3 +60,6 @@ class Item(BaseModel):
 async def root():
     return {"message": f"""{reply("What are photonics?")}"""}
 
+@app.post("/enviar/")
+async def procesar_datos(input_data: str = Form(...)):
+    return {"data": input_data}
