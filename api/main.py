@@ -62,4 +62,6 @@ async def root():
 
 @app.post("/enviar/")
 async def procesar_datos(input_data: str = Form(...)):
-    return {"data": input_data}
+    similars = search_similar(input_data)
+    response = chain.run(contents=similars, query=input_data)
+    return {"response": response}
