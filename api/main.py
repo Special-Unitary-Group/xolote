@@ -41,6 +41,7 @@ prompt = PromptTemplate(
         Based on the following content from research papers that I am familiar with and I know are related to my question:         
         {contents}
         {query}
+        Return me the answer converted to markdown format.
         """
 )
 chain_enviar = LLMChain(llm=model, prompt=prompt)
