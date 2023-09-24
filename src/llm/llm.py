@@ -9,6 +9,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain.schema import Document
 from dotenv import load_dotenv
+from switch import prompt_templates
 
 load_dotenv()
 
@@ -38,16 +39,7 @@ model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
 
 prompt = PromptTemplate(
     input_variables=["contents", "query"],
-    template="""
-        You are an expert academic researcher who enjoys helping other researchers, like myself.
-        The following contents are currently the most relevant to my research:
-        
-        {contents}
-
-        Based on the previous information, please help me with this: {query}
-
-        Please answer with the same text from the paper without paraphrasing or generating new text unless explicitly requested.
-        """,
+    template=prompt_templates("Summarize"),
 )
 
 chain = LLMChain(llm=model, prompt=prompt)
@@ -62,4 +54,4 @@ def search_similar(query: str, k=3):
 def reply(query: str) -> str:
     similars = search_similar(query)
 
-    return chain.run(contents=similars, query=query)
+    return chain.run(contents=similars,query=query)
