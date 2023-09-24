@@ -7,3 +7,5 @@ openai
 tiktoken
 faiss-cpu
 black
+uvicorn
+fastapi
