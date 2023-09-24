@@ -12,7 +12,7 @@ app = FastAPI()
 
 #Importing the data vectos
 embeddings = OpenAIEmbeddings()
-vectors = FAISS.load_local("../vector_index", embeddings)
+vectors = FAISS.load_local("vector_index", embeddings)
 #--------------------------
 
 #Decode Vectors
