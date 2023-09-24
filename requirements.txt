@@ -1,3 +1,8 @@
 langchain
 python-dotenv
 pandas
+pypdf
+jupyter
+openai
+tiktoken
+faiss-cpu
