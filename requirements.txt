@@ -8,3 +8,4 @@ tiktoken
 faiss-cpu
 black
 fastapi
+streamlit

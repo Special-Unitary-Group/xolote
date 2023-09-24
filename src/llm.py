@@ -15,7 +15,7 @@ load_dotenv()
 
 all_pages: list[Document] = []
 
-DIRPATH = os.path.abspath("../data/pdfs")
+DIRPATH = os.path.abspath("data/pdfs")
 
 files = os.listdir(DIRPATH)
 
