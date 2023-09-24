@@ -39,8 +39,7 @@ model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
 
 prompt = PromptTemplate(
     input_variables=["contents", "query"],
-    template=str(prompt_templates("Default"))+
-        "{contents} {query}",
+    template=prompt_templates("Summarize"),
 )
 
 chain = LLMChain(llm=model, prompt=prompt)
