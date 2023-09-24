@@ -72,5 +72,5 @@ async def procesar_datos(input_data: str = Form(...)):
 async def procesar_datos(input_data: str = Form(...)):
     similars = search_similar(input_data)
     response = chain_ranked.run(contents=similars, query=input_data)
-    response.split("\n")
+    response=response.split("\n")
     return {"response": response}
