@@ -30,6 +30,12 @@ To view the version of your libraries, run the following:
 pip show python-dotenv
 ```
 
+## Frontend
+
+This repo uses a frontend UI to make the LLM dynamic to a user. To avoid bad practices, this was forked into another repository and developed there, separately from the model and analysis.
+
+- [Front End Repo](https://github.com/David-Lazaro-Fernandez/smart-study)
+
 ### Environmental variables
 
 The `.env` file needs to have the following environmental variables for the script to work properly:
