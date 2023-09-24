@@ -1,10 +1,12 @@
 # Smart Study
 
+![](https://cdn-icons-png.flaticon.com/512/3743/3743319.png)
+
 This repository is part of the competition HackMty, where the goal is to create a project to make an efficient and quick generstive AI result, being a search engine.
 
-![HackMty](https://aistudio.blob.core.windows.net/random/AzureOpenAIKeys.png?sp=r&st=2023-09-23T21:32:41Z&se=2023-09-27T05:32:41Z&spr=https&sv=2022-11-02&sr=b&sig=LYMJH13tFL%2BKxf2Ku7pcrgvGAr4lPqFJ5xnwo8WqbxY%3D](https://www.google.com/url?sa=i&url=https%3A%2F%2Fhackmty.com%2F&psig=AOvVaw0cWkGM-bd5kr1G9qSvkjAT&ust=1695597390427000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLiB-9LuwYEDFQAAAAAdAAAAABAE)https://www.google.com/url?sa=i&url=https%3A%2F%2Fhackmty.com%2F&psig=AOvVaw0cWkGM-bd5kr1G9qSvkjAT&ust=1695597390427000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLiB-9LuwYEDFQAAAAAdAAAAABAE)
+![HackMty](https://hackmty.com/img/Logo_2023.png)
 
-![MLH](https://aistudio.blob.core.windows.net/random/AzureOpenAIKeys.png?sp=r&st=2023-09-23T21:32:41Z&se=2023-09-27T05:32:41Z&spr=https&sv=2022-11-02&sr=b&sig=LYMJH13tFL%2BKxf2Ku7pcrgvGAr4lPqFJ5xnwo8WqbxY%3D](https://www.google.com/url?sa=i&url=https%3A%2F%2Fhackmty.com%2F&psig=AOvVaw0cWkGM-bd5kr1G9qSvkjAT&ust=1695597390427000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLiB-9LuwYEDFQAAAAAdAAAAABAE)https://www.google.com/url?sa=i&url=https%3A%2F%2Fhackmty.com%2F&psig=AOvVaw0cWkGM-bd5kr1G9qSvkjAT&ust=1695597390427000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLiB-9LuwYEDFQAAAAAdAAAAABAE](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmlh.io%2F&psig=AOvVaw1bO1aKY3vk758MyfmWfqGX&ust=1695597488397000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJi5zoHvwYEDFQAAAAAdAAAAABAE)https://www.google.com/url?sa=i&url=https%3A%2F%2Fmlh.io%2F&psig=AOvVaw1bO1aKY3vk758MyfmWfqGX&ust=1695597488397000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJi5zoHvwYEDFQAAAAAdAAAAABAE)
+![MLH](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJymjH7ugfHm3TdKiYxMBIkSsDxbpne1eUjDOg%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1&ipt=59abe5a367f59149c6bde832f84fc88b4a292e3eeed5b426ff18d9501b847908&ipo=images)
 
 This project is done to resolve the issue of searching for an scientific paper, articule or report into a big pile with large amounts of documents. Where we only want to obtain information in a certain report that we are looking for.
 To save up time and energy, this projects has as input one or several article files and a prompt for what is being looked for. Giving as an output the required file and section where the request is obtained from.
@@ -26,18 +28,7 @@ To view the version of your libraries, run the following:
 pip show python-dotenv
 ```
 
-### Pinecone.io
-
-This project uses Pinecone.io as a Long-Term Memory method for AI. To obtain the necessary information, do the following:
-Create a Pinecone.io account if necessary and create an Index and API Key, these will be used in the env variables further on.
-
 ### Environmental variables
 
 The `.env` file needs to have the following environmental variables for the script to work properly:
 - `OPENAI_API_KEY`: API Key you use for OpenAI access
-- `OPENAI_API_BASE`: Base page for the API
-- `OPENAI_CHAT_MODEL_NAME`: GPT model instance being used
-- `OPENAI_EMBEDDINGS_MODEL_NAME`: Model name for OpenAI embeddings
-- `PINECONE_API_KEY`: Generated Pinecone API Key
-- `PINECONE_ENVIRONMENT`: Provided Environment for Pinecone, generated with Index
-- `PINECONE_INDEX_NAME`: Generated Index name for Pinecone
