@@ -1,6 +1,7 @@
-# Smart Study
+# Kaban
+
 <p align="center">
-<img src="https://cdn-icons-png.flaticon.com/512/3743/3743319.png" width="200" >
+<img src="img/kaban-logo.png" width="300">
 </p>
 
 This repository is part of the competition HackMty, where the goal is to create a project to make an efficient and quick generstive AI result, being a search engine.
