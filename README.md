@@ -15,12 +15,10 @@ To save up time and energy, this projects has as input one or several article fi
 
 The script works with the following versions:
 - python `3.11.5`
-- tensorflow `2.13.0`
-- python-dotenv `1.0.0`
 
 To install the necessary libraries, run the following code in a Python executer
 ``` CMD Commands
-pip install python-dotenv
+pip install -r requirements.txt
 ```
 
 To view the version of your libraries, run the following:
