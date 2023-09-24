@@ -12,11 +12,10 @@ from pydantic import BaseModel
 openai_api_key="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"
 app = FastAPI()
 
-origins = ['https://organic-zebra-w55pw969j7pf957q-3000.app.github.dev/']
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=[*],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
