@@ -1,8 +1,7 @@
 import os
-from pathlib import Path
 
 from langchain.document_loaders import PyPDFLoader
-from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.prompts import PromptTemplate
@@ -18,7 +17,9 @@ all_pages: list[Document] = []
 
 DIRPATH = os.path.abspath("..\\..\\data\\pdfs\\")
 
-for filename in os.listdir(DIRPATH):
+files = os.listdir(DIRPATH)
+
+for filename in files:
     filepath = os.path.join(DIRPATH, filename)
 
     # skip non-PDF files
@@ -26,9 +27,10 @@ for filename in os.listdir(DIRPATH):
         continue
 
     loader = PyPDFLoader(filepath)
-    pages = loader.load_and_split(CharacterTextSplitter())
+    pages = loader.load_and_split(RecursiveCharacterTextSplitter())
 
     all_pages.extend(pages)
+
 
 embeddings = OpenAIEmbeddings()
 vectors = FAISS.from_documents(all_pages, embeddings)
@@ -36,20 +38,21 @@ vectors = FAISS.from_documents(all_pages, embeddings)
 model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
 
 prompt = PromptTemplate(
-    input_variables=["contents"],
-    template=prompt_templates("Ranking")
+    input_variables=["contents", "query"],
+    template=str(prompt_templates("Default"))+
+        "{contents} {query}",
 )
 
 chain = LLMChain(llm=model, prompt=prompt)
 
 
-def search_similar(query: str, k=3) -> list[str]:
-    similars = vectors.similarity_search(query, k=k)
+def search_similar(query: str, k=3):
+    similars = vectors.similarity_search_with_relevance_scores(query, k=k)
 
-    return [s.page_content for s in similars]
+    return similars
 
 
 def reply(query: str) -> str:
     similars = search_similar(query)
 
-    return chain.run(contents=similars)
+    return chain.run(contents=similars,query=query)
