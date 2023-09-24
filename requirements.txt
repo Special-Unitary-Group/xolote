@@ -7,3 +7,4 @@ openai
 tiktoken
 faiss-cpu
 black
+fastapi
