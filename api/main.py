@@ -32,7 +32,7 @@ def search_similar(query: str):
     return [s.page_content for s in similars]
 #--------------------------
 
-#Declaring the chain
+#Declaring the chain for /enviar/
 model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
 prompt = PromptTemplate(
     input_variables=["contents", "query"],
@@ -43,25 +43,34 @@ prompt = PromptTemplate(
         {query}
         """
 )
-chain = LLMChain(llm=model, prompt=prompt)
+chain_enviar = LLMChain(llm=model, prompt=prompt)
 #--------------------------
 
-def reply(query: str):
-    """query: str (user input)"""
-    similars = search_similar(query)
-    response = chain.run(contents=similars, query=query)
-    return response
+#Declaring the chain for /ranked/
+model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
+prompt = PromptTemplate(
+    input_variables=["contents", "query"],
+    template="""
+        Based on the following contents:
 
+            {contents}
 
-class Item(BaseModel):
-    name: str
+            Give me a list of the provided papers ranked by relevance according to {query}."""
+)
+chain_ranked = LLMChain(llm=model, prompt=prompt)
+#--------------------------
 
-@app.get("/")
-async def root():
-    return {"message": f"""{reply("What are photonics?")}"""}
 
 @app.post("/enviar/")
 async def procesar_datos(input_data: str = Form(...)):
     similars = search_similar(input_data)
-    response = chain.run(contents=similars, query=input_data)
+    response = chain_enviar.run(contents=similars, query=input_data)
+    return {"response": response}
+
+
+@app.post("/ranked/")
+async def procesar_datos(input_data: str = Form(...)):
+    similars = search_similar(input_data)
+    response = chain_ranked.run(contents=similars, query=input_data)
+    response.split("\n")
     return {"response": response}
