@@ -10,6 +10,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain.schema import Document
 from dotenv import load_dotenv
+from switch import prompt_templates
 
 load_dotenv()
 
@@ -35,17 +36,8 @@ vectors = FAISS.from_documents(all_pages, embeddings)
 model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
 
 prompt = PromptTemplate(
-    input_variables=["contents", "query"],
-    template="""
-        You are an expert academic researcher that enjoys helping other researchers, like myself.
-        Based on the following content from research papers that I am familiar with, and I know are related to my question: 
-        
-        {contents}
-
-        {query}
-
-        Please keep your replies concise but short. Do not answer something that was not asked.
-        """,
+    input_variables=["contents"],
+    template=prompt_templates("Ranking")
 )
 
 chain = LLMChain(llm=model, prompt=prompt)
@@ -60,4 +52,4 @@ def search_similar(query: str, k=3) -> list[str]:
 def reply(query: str) -> str:
     similars = search_similar(query)
 
-    return chain.run(contents=similars, query=query)
+    return chain.run(contents=similars)
