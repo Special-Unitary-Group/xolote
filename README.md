@@ -13,6 +13,12 @@ This repository is part of the competition HackMty, where the goal is to create 
 This project is done to resolve the issue of searching for an scientific paper, articule or report into a big pile with large amounts of documents. Where we only want to obtain information in a certain report that we are looking for.
 To save up time and energy, this projects has as input one or several article files and a prompt for what is being looked for. Giving as an output the required file and section where the request is obtained from.
 
+Our project went to top 10 finalist teams in the Hackathon!
+
+<p align="center">
+<img src="img/su-group.jpg" width="800">
+</p>
+
 ## Previous configurations
 
 ### Installing the libraries
