@@ -54,7 +54,7 @@ We plan on improving and releasing it soon.
 
 ### Demo
 
-![demo](img/kaban-demo.mp4)
+<!-- ![demo](img/kaban-demo.mp4) -->
 
 # Local development
 
