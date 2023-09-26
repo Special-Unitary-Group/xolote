@@ -15,7 +15,7 @@ load_dotenv()
 
 all_pages: list[Document] = []
 
-DIRPATH = os.path.abspath("..\\..\\data\\pdfs\\")
+DIRPATH = os.path.abspath("../../data/pdfs")
 
 files = os.listdir(DIRPATH)
 
@@ -37,12 +37,12 @@ vectors = FAISS.from_documents(all_pages, embeddings)
 
 model = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
 
-prompt = PromptTemplate(
-    input_variables=["contents", "query"],
-    template=prompt_templates("Summarize"),
-)
 
-chain = LLMChain(llm=model, prompt=prompt)
+def get_prompt(key: str) -> PromptTemplate:
+    return PromptTemplate(
+        input_variables=["contents", "query"],
+        template=prompt_templates(key),
+    )
 
 
 def search_similar(query: str, k=3):
@@ -51,7 +51,9 @@ def search_similar(query: str, k=3):
     return similars
 
 
-def reply(query: str) -> str:
+def reply(query: str, key: str = "default") -> str:
+    chain = LLMChain(llm=model, prompt=get_prompt(key))
+
     similars = search_similar(query)
 
-    return chain.run(contents=similars,query=query)
+    return chain.run(contents=similars, query=query)
