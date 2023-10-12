@@ -7,3 +7,4 @@ openai
 tiktoken
 faiss-cpu
 black
+git+https://github.com/facebookresearch/nougat
