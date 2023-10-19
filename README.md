@@ -4,7 +4,7 @@ Centralize your own research material and consult it with the power of AI and LL
 As easy as asking ChatGPT to assist you on your research!
 
 <div align="center">
-    <img src="img/xolote-logo.png" width="150">
+    <img src="img/xolote.png" width="200">
 </div>
 
 ## Motivation
