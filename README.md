@@ -1,10 +1,10 @@
-# Kaban
+# Xolote
 
 Centralize your own research material and consult it with the power of AI and LLMs.
 As easy as asking ChatGPT to assist you on your research!
 
 <div align="center">
-    <img src="img/kaban-logo.png" width="150">
+    <img src="img/xolote-logo.png" width="150">
 </div>
 
 ## Motivation
@@ -15,7 +15,7 @@ How do you recall a particular feature of that specific contribution to the curr
 In what paper did you read it?
 What was the main source that helped that author to develop her novel algorithm and how did she adapt it to her particular problem?
 
-We thought of Kaban as an [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) tool to assist researchers with their own material and references of information, such as [academic papers](https://en.wikipedia.org/wiki/Academic_publishing#Scholarly_paper) and [scientific articles](https://en.wikipedia.org/wiki/Scientific_literature#Scientific_article).
+We thought of Xolote as an [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) tool to assist researchers with their own material and references of information, such as [academic papers](https://en.wikipedia.org/wiki/Academic_publishing#Scholarly_paper) and [scientific articles](https://en.wikipedia.org/wiki/Scientific_literature#Scientific_article).
 More than being able to just respond contextless questions like *What is the main topic of these papers?*, we aim to exploit the potential of [Large Language Models (LLMs)](https://en.wikipedia.org/wiki/Large_language_model), such as [ChatGPT](https://en.wikipedia.org/wiki/ChatGPT), and provide a powerful assistance tool at hand to speed up and improve the research process very commonly found in academia.
 
 We know that in this process, researchers have their own collection of material relevant to their topic.
@@ -26,12 +26,12 @@ For example, when writing your paper, you may wonder: *How many values did these
 Of course, the fact that you *have* that question means you read that section in one of your papers (and hopefully understood it), but you may not remember the specifics of that particular experiment.
 Why wasting time looking into your dozens of files when you could just ask an AI to refresh your memory, or to tell you where exactly the authors described that?
 
-Think of Kaban as your personalized ChatGPT, which is already trained on human language, with the plus of having your own research material as a knowledge base that it can consult, query, summarize, connect, and organize based on your prompts.
+Think of Xolote as your personalized ChatGPT, which is already trained on human language, with the plus of having your own research material as a knowledge base that it can consult, query, summarize, connect, and organize based on your prompts.
 
 As a note, this is not saving you from actually reading your papers.
 Most if not all serious academics agree in that no matter how powerful the AI gets, researchers *must* read their sources.
 But that does not stop you to use a simple `Ctrl + F` that shows you a paragraph that you already know what it is about.
-Kaban takes that to a whole new and intelligent level, thanks to the current capability and future potential of AI and specifcially LLMs.
+Xolote takes that to a whole new and intelligent level, thanks to the current capability and future potential of AI and specifcially LLMs.
 
 ## Background and origin
 
@@ -39,7 +39,7 @@ Kaban takes that to a whole new and intelligent level, thanks to the current cap
     <img src="https://hackmty.com/img/Logo_2023.png" width="200">
 </div>
 
-Kaban was born as one of the projects for the [HackMTY 2023](https://hackmty.com/), the largest [hackathon](https://en.wikipedia.org/wiki/Hackathon) in Latin America.
+Xolote was born as one of the projects for the [HackMTY 2023](https://hackmty.com/), the largest [hackathon](https://en.wikipedia.org/wiki/Hackathon) in Latin America.
 The challenge was to create a novel application of a smart search engine using large language models.
 
 In the 24 hours span of the hackathon, we only managed to finish a simple demo, which placed us among the top 10 finalists of the contest, out of +100.
